@@ -42,10 +42,10 @@ console.log("This is working!");
         // Iterate over the JSON object
         for (i = 0, len = resp.length; i < len; i++) {
           tableData.push({
-            Title: resp[i].Title,
-            FIR: resp[i].FIR,
-            Location_x0020_Indicator: resp[i].Location_x0020_Indicator,
-            Region: resp[i].Region,
+            "Title": resp[i].Title,
+            "FIR": resp[i].FIR,
+            "Location_x0020_Indicator": resp[i].Location_x0020_Indicator,
+            "Region": resp[i].Region,
           });
         }
         table.appendRows(tableData);
