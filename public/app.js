@@ -23,13 +23,13 @@ console.log("This is working!");
       },
     ];
 
-    let IcaoTableSchema = {
+    let icaoTableSchema = {
       id: "ICAO",
       alias: "ICAO FIR-Country relevance",
       columns: icaoCols,
     };
 
-    schemaCallback([IcaoTableSchema]);
+    schemaCallback([icaoTableSchema]);
   };
 
   myConnector.getData = function (table, doneCallback) {
@@ -37,15 +37,15 @@ console.log("This is working!");
     var i = 0;
 
     $.getJSON(
-      "https://www.icao.int/safety/FITS/Lists/Current%20FIR%20Status/AllItems.aspx",
+      "https://www.icao.int/safety/FITS/Lists/Current%20FStatus/AllItems.aspx",
       function (resp) {
         // Iterate over the JSON object
         for (i = 0, len = resp.length; i < len; i++) {
           tableData.push({
-            "Title": resp[i].Title,
-            "FIR": resp[i].FIR,
-            "Location_x0020_Indicator": resp[i].Location_x0020_Indicator,
-            "Region": resp[i].Region,
+            Title: resp[i].Title,
+            FIR: resp[i].FIR,
+            Location_x0020_Indicator: resp[i].Location_x0020_Indicator,
+            Region: resp[i].Region,
           });
         }
         table.appendRows(tableData);
